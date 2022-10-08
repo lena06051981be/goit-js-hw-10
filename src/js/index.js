@@ -85,6 +85,10 @@ function createMarkupCountyInfo(countriesData) {
 
 function onClickLink(evt) {
   evt.preventDefault();
+  console.log(evt.target.nodeName);
+  if (evt.target.nodeName === 'UL' || evt.target.nodeName === 'LI') {
+    return;
+  }
 
   refs.input.value = evt.target.dataset.href.trim();
   console.log(evt.target);
